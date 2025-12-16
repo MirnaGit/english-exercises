@@ -1,18 +1,63 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Prueba móvil</title>
+    <meta charset="utf-8">
+    <title>Prepositions Exercise</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="manifest.json">
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        select {
+            font-size: 16px;
+        }
+
+        button {
+            font-size: 16px;
+            margin-top: 15px;
+        }
+    </style>
 </head>
 <body>
 
-<h2>Ejercicio de prueba</h2>
+    <h2>Choose the correct preposition</h2>
 
-<p>She ___ a car.</p>
+    <p>
+        I'm usually
+        <select data-correct="in">
+            <option></option>
+            <option>with</option>
+            <option>at</option>
+            <option>in</option>
+            <option>on</option>
+        </select>
+        bed before twelve o'clock.
+    </p>
 
-<button onclick="alert('Correct answer: HAS')">
-  Ver respuesta
-</button>
+    <button onclick="check()">Check</button>
+
+    <script>
+function check() {
+  document.querySelectorAll("select").forEach(sel => {
+    if (sel.value === sel.dataset.correct) {
+      sel.style.border = "2px solid green";
+    } else {
+      sel.style.border = "2px solid red";
+    }
+  });
+}
+    </script>
+
+    <script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js');
+}
+    </script>
 
 </body>
 </html>
