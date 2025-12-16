@@ -4,58 +4,110 @@
     <meta charset="utf-8">
     <title>Prepositions Exercise</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="manifest" href="manifest.json">
-
     <style>
         body {
             font-family: Arial;
-            padding: 20px;
         }
 
         select {
-            font-size: 16px;
-        }
-
-        button {
-            font-size: 16px;
-            margin-top: 15px;
+            margin: 0 5px;
         }
     </style>
 </head>
 <body>
 
-    <h2>Choose the correct preposition</h2>
+    <h2>Elige la preposición correcta (with / at / in / on)</h2>
+
+    <!-- 🔹 LISTA ÚNICA DE PREPOSICIONES -->
+    <template id="preps">
+        <option value="">---</option>
+        <option>with</option>
+        <option>at</option>
+        <option>in</option>
+        <option>on</option>
+    </template>
 
     <p>
-        I'm usually
-        <select data-correct="in">
-            <option></option>
-            <option>with</option>
-            <option>at</option>
-            <option>in</option>
-            <option>on</option>
-        </select>
+        1) I'm usually
+        <select data-correct="in"></select>
         bed before twelve o'clock.
     </p>
 
-    <button onclick="check()">Check</button>
+    <p>
+        2) We had drinks
+        <select data-correct="on"></select>
+        the balcony.
+    </p>
+
+    <p>
+        3) I'm going out for a drink after work
+        <select data-correct="with"></select>
+        Barry.
+    </p>
+
+    <p>
+        4) I'll meet you tomorrow
+        <select data-correct="at"></select>
+        eleven o’clock.
+    </p>
+
+    <p>
+        5) He got
+        <select data-correct="on"></select>
+        the bus and I waved goodbye.
+    </p>
+
+    <p>
+        6) Can you pass me my mobile, please? It's
+        <select data-correct="on"></select>
+        the table.
+    </p>
+
+    <p>
+        7) Buckingham Palace is
+        <select data-correct="in"></select>
+        London.
+    </p>
+
+    <p>
+        8) My mum's birthday’s
+        <select data-correct="on"></select>
+        August 21st.
+    </p>
+
+    <p>
+        9) I met my wife
+        <select data-correct="in"></select>
+        Valencia
+        <select data-correct="in"></select>
+        2001.
+    </p>
+
+    <p>
+        10) We arrived
+        <select data-correct="at"></select>
+        the airport an hour late and nearly missed the flight.
+    </p>
+
+    <br>
+    <button onclick="corregir()">Corregir</button>
 
     <script>
-function check() {
-  document.querySelectorAll("select").forEach(sel => {
+/* 🔹 Rellenar TODAS las listas con la misma plantilla */
+document.querySelectorAll("select").forEach(sel => {
+  sel.appendChild(
+    document.getElementById("preps").content.cloneNode(true)
+  );
+});
+
+function corregir() {
+  document.querySelectorAll("select[data-correct]").forEach(sel => {
     if (sel.value === sel.dataset.correct) {
       sel.style.border = "2px solid green";
     } else {
       sel.style.border = "2px solid red";
     }
   });
-}
-    </script>
-
-    <script>
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js');
 }
     </script>
 
