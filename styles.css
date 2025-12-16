@@ -1,0 +1,77 @@
+﻿/* ===========================
+   ESTILOS BASE
+   =========================== */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0 1rem;
+    line-height: 1.6;
+    background: #f9f9f9;
+    color: #333;
+}
+
+.container {
+    max-width: 800px; /* ancho máximo en pantallas grandes */
+    margin: auto;
+    padding: 1rem;
+}
+
+h1 {
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+/* ===========================
+   LISTA DE EJERCICIOS
+   =========================== */
+.exercise-list {
+    padding-left: 1rem;
+    font-size: 1rem;
+}
+
+    .exercise-list li {
+        margin-bottom: 0.8rem;
+    }
+
+/* ===========================
+   BOTÓN
+   =========================== */
+.btn-correct {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+/* ===========================
+   MEDIA QUERIES — ADAPTAR
+   =========================== */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .exercise-list {
+        font-size: 0.95rem;
+    }
+
+    .btn-correct {
+        font-size: 1rem;
+        padding: 0.7rem;
+    }
+}
+
+@media (max-width: 400px) {
+    h1 {
+        font-size: 1.3rem;
+    }
+
+    .btn-correct {
+        padding: 0.6rem;
+    }
+}
